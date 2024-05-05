@@ -10,6 +10,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Budget Tracker",
   description: "App to track all your budgets.",
+  icons: [
+    {
+      url: "/logo.svg",
+      href: "/logo.svg"
+    }
+  ]
 };
 
 export default function RootLayout({

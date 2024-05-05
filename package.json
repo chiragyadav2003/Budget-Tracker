@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^5.0.4",
     "@clerk/themes": "^2.1.1",
     "@hookform/resolvers": "^3.3.4",
+    "@prisma/client": "^5.13.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -60,13 +61,15 @@
     "zod": "^3.23.5"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.12.8",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
+    "prisma": "^5.13.0",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }

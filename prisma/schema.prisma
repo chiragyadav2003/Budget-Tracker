@@ -14,7 +14,7 @@ datasource db {
   url      = "file:./dev.db" //url for local development
 }
 
-model UserSetting {
+model UserSettings {
   userId   String @id
   currency String
 }

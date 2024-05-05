@@ -21,7 +21,7 @@ function Navbar() {
 }
 
 const items = [
-    { label: "Dashboard", link: "/dashboard" },
+    { label: "Dashboard", link: "/" },
     { label: "Transactions", link: "/transactions" },
     { label: "Manage", link: "/manage" },
 ]
@@ -112,7 +112,7 @@ function NavbarItem({ link, label, clickCallBack }: { link: string, label: strin
             {
                 isActive && (
                     <div className=" absolute -bottom-[2px] left-1/2
-                    hidden h-[20px] w-[80%] -translate-x-1/2 rounded-xl bg-foreground md:block"></div>
+                    hidden h-[2px] w-[80%] -translate-x-1/2 rounded-xl bg-foreground md:block"></div>
                 )
             }
         </div>

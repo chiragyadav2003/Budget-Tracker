@@ -9,4 +9,4 @@ export const UpdateUserCurrencySchame = z.object({
         }
         return value;
     })
-}) 
+})

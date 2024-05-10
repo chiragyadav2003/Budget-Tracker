@@ -76,7 +76,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                 category: undefined
             });
 
-            //after creating a txn, we need to invalidate the overview query which will refetch data in the homepage
+            //after creating a txn, we need to invalidate the overview query which will refetch data in the homepage for all which have "category" as their queryKey
             queryClient.invalidateQueries({
                 queryKey: ["overview"]
             });

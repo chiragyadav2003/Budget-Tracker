@@ -24,7 +24,7 @@ function StatsCards({ userSettings, from, to }: Props) {
     // tenStack query to fetch data - expense and income
     const statsQuery = useQuery<GetBalanceStatsResponseType>({
         //NOTE - every time we get a new range, query got refetched , due to queryKeys
-        queryKey: ["overview", "stats", "from", "to"],
+        queryKey: ["overview", "stats", from, to],
         queryFn: () => fetch(`/api/stats/balance?from=${from}&to=${to}`)
             .then(res => res.json())
     })

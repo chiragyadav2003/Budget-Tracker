@@ -10,13 +10,21 @@ import HistoryPeriodSelector from "./HistoryPeriodSelector";
 import { useQuery } from "@tanstack/react-query";
 import { GetHistoryDataReturnType } from "@/app/api/history-data/route";
 import SkeletonWrapper from "@/components/SkeletonWrapper";
+import {
+    Bar,
+    BarChart,
+    CartesianGrid,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis,
+} from "recharts";
 
 
 
 function History({ userSettings }: { userSettings: UserSettings }) {
 
     const [timeframe, setTimeframe] = useState<Timeframe>("month");
-
     const [period, setPeriod] = useState<Period>({
         month: new Date().getMonth(),
         year: new Date().getFullYear()

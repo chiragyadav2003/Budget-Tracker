@@ -6,7 +6,7 @@ export function DateToUTCDate(date: Date) {
         Date.UTC(
             date.getFullYear(),
             date.getMonth(),
-            date.getDay(),
+            date.getDate(),
             date.getHours(),
             date.getMinutes(),
             date.getSeconds(),

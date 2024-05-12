@@ -51,14 +51,14 @@ export async function CreateTransaction(form: CreateTransactionSchemaType) {
             where: {
                 day_month_year_userId: {
                     userId: user.id,
-                    day: date.getUTCDay(),
+                    day: date.getUTCDate(),
                     month: date.getUTCMonth(),
                     year: date.getUTCFullYear()
                 },
             },
             create: {
                 userId: user.id,
-                day: date.getUTCDay(),
+                day: date.getUTCDate(),
                 month: date.getUTCMonth(),
                 year: date.getUTCFullYear(),
                 expense: type === "expense" ? amount : 0,

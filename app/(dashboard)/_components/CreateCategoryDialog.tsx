@@ -33,11 +33,15 @@ import { useTheme } from "next-themes";
 
 
 function CreateCategoryDialog(
-    { type, successCallback }:
-        {
-            type: TransactionType;
-            successCallback: (category: Category) => void
-        }) {
+    {
+        type,
+        successCallback,
+        trigger
+    }: {
+        type: TransactionType;
+        successCallback: (category: Category) => void;
+        trigger?: React.ReactNode
+    }) {
 
     const [open, setOpen] = useState(false);
 
@@ -95,11 +99,11 @@ function CreateCategoryDialog(
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button
+                {trigger ? trigger : <Button
                     variant={"ghost"}
                     className="flex border-separate items-center justify-start rounded-none border-b px-3 py-3 text-muted-foreground">
                     <PlusSquareIcon className="mr-2 h-4 w-4" />Create new category...
-                </Button>
+                </Button>}
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>

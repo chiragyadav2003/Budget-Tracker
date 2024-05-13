@@ -24,6 +24,7 @@ import SkeletonWrapper from '@/components/SkeletonWrapper';
 import { DataTableColumnHeader } from '@/components/dataTable/ColumnHeader';
 import { useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { DataTableFacetedFilter } from '@/components/dataTable/data-table-faceted-filter';
 
 
 
@@ -142,9 +143,18 @@ function TransactionTable({ from, to }: Props) {
 
     return (
         <div className=" w-full">
-            {/* <pre>{JSON.stringify(categoriesOption, null, 2)}</pre> */}
             <div className=" flex flex-wrap items-end justify-between gap-2 py-4">
-                Add: Filters
+                <div className="flex gap-2">
+                    {
+                        table.getColumn("category") && (
+                            <DataTableFacetedFilter
+                                title='Category'
+                                column={table.getColumn("category")}
+                                options={categoriesOption}
+                            />
+                        )
+                    }
+                </div>
             </div>
             <SkeletonWrapper isLoading={history.isFetching}>
                 <div className="rounded-md border">

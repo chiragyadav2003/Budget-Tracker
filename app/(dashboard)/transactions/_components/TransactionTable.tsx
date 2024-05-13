@@ -10,6 +10,7 @@ import {
     flexRender,
     getCoreRowModel,
     getFilteredRowModel,
+    getPaginationRowModel,
     getSortedRowModel,
     SortingState,
     useReactTable,
@@ -29,6 +30,7 @@ import { useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { DataTableFacetedFilter } from '@/components/dataTable/data-table-faceted-filter';
 import { DataTableViewOptions } from '@/components/dataTable/ColumnToggle';
+import { Button } from '@/components/ui/button';
 
 
 
@@ -134,6 +136,11 @@ function TransactionTable({ from, to }: Props) {
         data: history.data || emptyData,
         columns,
         getCoreRowModel: getCoreRowModel(),
+        initialState: {
+            pagination: {
+                pageSize: 4
+            }
+        },
         state: {
             sorting,
             columnFilters
@@ -142,6 +149,7 @@ function TransactionTable({ from, to }: Props) {
         onColumnFiltersChange: setColumnFilters,
         getSortedRowModel: getSortedRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
+        getPaginationRowModel: getPaginationRowModel(),
     })
 
     const categoriesOption = useMemo(() => {
@@ -231,8 +239,26 @@ function TransactionTable({ from, to }: Props) {
                         </TableBody>
                     </Table>
                 </div>
-            </SkeletonWrapper>
-        </div>
+                <div className="flex items-center justify-end space-x-2 py-4">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => table.previousPage()}
+                        disabled={!table.getCanPreviousPage()}
+                    >
+                        Previous
+                    </Button>
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => table.nextPage()}
+                        disabled={!table.getCanNextPage()}
+                    >
+                        Next
+                    </Button>
+                </div>
+            </SkeletonWrapper >
+        </div >
     )
 }
 

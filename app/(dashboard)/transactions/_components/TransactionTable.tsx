@@ -91,6 +91,9 @@ export const columns: ColumnDef<TransactionHistoryRow>[] = [
     },
     {
         accessorKey: "type",
+        filterFn: (row, id, value) => {
+            return value.includes(row.getValue(id))
+        },
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Type" />
         ),
@@ -162,6 +165,18 @@ function TransactionTable({ from, to }: Props) {
                                 title='Category'
                                 column={table.getColumn("category")}
                                 options={categoriesOption}
+                            />
+                        )
+                    }
+                    {
+                        table.getColumn("type") && (
+                            <DataTableFacetedFilter
+                                title='Type'
+                                column={table.getColumn("type")}
+                                options={[
+                                    { label: "Income", value: "income" },
+                                    { label: "Expense", value: "expense" },
+                                ]}
                             />
                         )
                     }

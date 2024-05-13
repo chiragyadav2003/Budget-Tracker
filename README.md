@@ -40,25 +40,32 @@ Technologies used in the project:
 
 - Log In / Sign Up
   ![1715627411631](image/README/1715627411631.png)
-
+  <br>
 - Setup currency
   ![1715627581983](image/README/1715627581983.png)
-
+  <br>
 - Home Page
   ![1715627624809](image/README/1715627624809.png)
-
+  <br>
 - Create new transaction by adding new categories
+
   - create new category
     ![1715627700700](image/README/1715627700700.png)
+    <br>
   - create new transaction
     ![1715627715342](image/README/1715627715342.png)
+    <br>
   - Chart Updation
     ![1715627743255](image/README/1715627743255.png)
+    <br>
+
 - Manage Page
   ![1715627879300](image/README/1715627879300.png)
 
--Transaction Page
-![1715627908178](image/README/1715627908178.png)
+  <br>
+
+- Transaction Page
+  ![1715627908178](image/README/1715627908178.png)
 
 <h2>Project Description</h2>
 

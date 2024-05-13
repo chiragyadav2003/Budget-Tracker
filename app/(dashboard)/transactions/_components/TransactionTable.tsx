@@ -57,11 +57,30 @@ export const columns: ColumnDef<TransactionHistoryRow>[] = [
             <DataTableColumnHeader column={column} title="Description" />
         ),
         cell: ({ row }) => (
-            <div className=" flex gap-2 capitalize">
+            <div className="capitalize">
                 {row.original.description}
             </div>
         )
     },
+    {
+        accessorKey: "date",
+        header: "Date",
+        cell: ({ row }) => {
+            const date = new Date(row.original.date)
+            //NOTE - format date as per need
+            const formattedDate = date.toLocaleString("default", {
+                timeZone: "UTC",
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit"
+            });
+            return (
+                <div className=" text-muted-foreground">
+                    {formattedDate}
+                </div>
+            )
+        }
+    }
 ]
 
 function TransactionTable({ from, to }: Props) {

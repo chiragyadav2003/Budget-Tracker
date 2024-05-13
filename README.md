@@ -38,29 +38,37 @@ Technologies used in the project:
 
 <h2>ScreenShots</h2>
 
-- Log In / Sign Up
-  ![1715627411631](image/README/1715627411631.png)
-  <br>
-- Setup currency
-  ![1715627581983](image/README/1715627581983.png)
-  <br>
-- Home Page
-  ![1715627624809](image/README/1715627624809.png)
-  <br>
-- create new category
-  ![1715627700700](image/README/1715627700700.png)
-  <br>
-- create new transaction
-  ![1715627715342](image/README/1715627715342.png)
-  <br>
-- Chart Updation
-  ![1715627743255](image/README/1715627743255.png)
-  <br>
-- Manage Page
-  ![1715627879300](image/README/1715627879300.png)
-  <br>
-- Transaction Page
-  ![1715627908178](image/README/1715627908178.png)
+      1. Log In / Sign Up
+
+![1715627411631](image/README/1715627411631.png)
+
+      2. Setup currency
+
+![1715627581983](image/README/1715627581983.png)
+
+      3. Home Page
+
+![1715627624809](image/README/1715627624809.png)
+
+      4. create new category
+
+![1715627700700](image/README/1715627700700.png)
+
+      5. create new transaction
+
+![1715627715342](image/README/1715627715342.png)
+
+      6. Chart Updation
+
+![1715627743255](image/README/1715627743255.png)
+
+      7. Manage Page
+
+![1715627879300](image/README/1715627879300.png)
+
+      8. Transaction Page
+
+![1715627908178](image/README/1715627908178.png)
 
 <br>
 <h2>Project Description</h2>

@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/table"
 import SkeletonWrapper from '@/components/SkeletonWrapper';
 import { DataTableColumnHeader } from '@/components/dataTable/ColumnHeader';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 
@@ -128,8 +128,21 @@ function TransactionTable({ from, to }: Props) {
         getSortedRowModel: getSortedRowModel(),
     })
 
+    const categoriesOption = useMemo(() => {
+        const categoriesMap = new Map();
+        history.data?.forEach((transaction) => {
+            categoriesMap.set(transaction.category, {
+                value: transaction.category,
+                label: `${transaction.categoryIcon} ${transaction.category}`
+            });
+        });
+        const uniqueCategories = new Set(categoriesMap.values());
+        return Array.from(uniqueCategories)
+    }, [history.data])
+
     return (
         <div className=" w-full">
+            {/* <pre>{JSON.stringify(categoriesOption, null, 2)}</pre> */}
             <div className=" flex flex-wrap items-end justify-between gap-2 py-4">
                 Add: Filters
             </div>

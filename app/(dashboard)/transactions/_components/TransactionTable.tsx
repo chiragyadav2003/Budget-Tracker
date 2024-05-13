@@ -5,7 +5,6 @@ import { DateToUTCDate } from '@/lib/helpers';
 import { useQuery } from '@tanstack/react-query';
 import {
     ColumnDef,
-    ColumnFilter,
     ColumnFiltersState,
     flexRender,
     getCoreRowModel,
@@ -32,7 +31,9 @@ import { DataTableFacetedFilter } from '@/components/dataTable/data-table-facete
 import { DataTableViewOptions } from '@/components/dataTable/ColumnToggle';
 import { Button } from '@/components/ui/button';
 import { mkConfig, generateCsv, download } from "export-to-csv";
-import { DownloadIcon } from 'lucide-react';
+import { DownloadIcon, MoreHorizontal, TrashIcon } from 'lucide-react';
+import DeleteTransactionDialog from './DeleteTransactionDialog';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 
 
 
@@ -118,6 +119,13 @@ const columns: ColumnDef<TransactionHistoryRow>[] = [
             <p className="flex items-start text-md rounded-lg bg-gray-400/5 p-2 text-center font-medium">
                 {row.original.formattedAmount}
             </p>
+        )
+    },
+    {
+        id: "actions",
+        enableHiding: false,
+        cell: ({ row }) => (
+            <RowActions transaction={row.original} />
         )
     },
 ]
@@ -296,5 +304,46 @@ function TransactionTable({ from, to }: Props) {
         </div >
     )
 }
+export default TransactionTable;
 
-export default TransactionTable 
+
+function RowActions(
+    {
+        transaction
+    }: {
+        transaction: TransactionHistoryRow
+    }) {
+
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+
+    return (
+        <>
+            <DeleteTransactionDialog
+                open={showDeleteDialog}
+                setOpen={setShowDeleteDialog}
+                transactionId={transaction.id}
+            />
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant={'ghost'} className=' h-8 w-8 p-0'>
+                        <span className="sr-only">Open menu</span>
+                        <MoreHorizontal className='h-4 w-4' />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align='end'>
+                    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                        className='flex items-center gap-2'
+                        onSelect={() => {
+                            setShowDeleteDialog((prev) => !prev)
+                        }}
+                    >
+                        <TrashIcon className=' h-4 w-4 text-muted-foreground' />
+                        Delete
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu >
+        </>
+    )
+}

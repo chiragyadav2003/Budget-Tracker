@@ -36,21 +36,45 @@ Technologies used in the project:
 - Recharts
 - Export-to-CSV
 
+<h2>ScreenShots</h2>
+
+- Log In / Sign Up
+  ![1715627411631](image/README/1715627411631.png)
+
+- Setup currency
+  ![1715627581983](image/README/1715627581983.png)
+
+- Home Page
+  ![1715627624809](image/README/1715627624809.png)
+
+- Create new transaction by adding new categories
+  - create new category
+    ![1715627700700](image/README/1715627700700.png)
+  - create new transaction
+    ![1715627715342](image/README/1715627715342.png)
+  - Chart Updation
+    ![1715627743255](image/README/1715627743255.png)
+- Manage Page
+  ![1715627879300](image/README/1715627879300.png)
+
+-Transaction Page
+![1715627908178](image/README/1715627908178.png)
+
 <h2>Project Description</h2>
 
 <h3>BudgetTracker : A Comprehensive Budget Management Solution</h3>
 
 **_BudgetTracker is a cutting-edge end-to-end budget management application built using a robust technology stack that combines the power of TypeScript ReactJS NextJS PostgreSQL and a variety of other innovative tools. This comprehensive solution empowers users to effectively manage their financial lives by providing a seamless and intuitive interface for tracking income expenses and investments._**
-<br>
+`<br>`
 
 **Key Features Category Management:**
-<br>
+`<br>`
 
 1. Users can create new categories to organize their financial data making it easier to analyze and manage their spending habits.
 2. Transaction Management: BudgetTracker allows users to create new transactions track expenses and monitor income. This feature is designed to provide a clear picture of financial activities enabling informed decision-making.
 3. Deletion Capabilities: The app includes the ability to delete categories and transactions ensuring that users can maintain a clean and organized financial record.
 
-<br><br>
+`<br><br>`
 **Technical Stack** - BudgetTracker leverages the following technologies to deliver a robust and scalable solution:
 
 1. TypeScript: Ensuring type safety and robust logic implementation.
@@ -69,32 +93,31 @@ Technologies used in the project:
 14. Zod Validation: Ensuring data integrity and security through validation.
 15. Clerk Auth: Managing user authentication and authorization securely.
 
-<br><br>
+`<br><br>`
 
-**How BudgetTracker Works** <br>
+**How BudgetTracker Works** `<br>`
 BudgetTracker is designed to provide users with a comprehensive and user-friendly interface for managing their financial lives. Here's how it works:
 
-1.  User Onboarding: Users sign up for the app and are guided through a simple onboarding process where they can link their bank accounts and set up their budgeting goals.
-2.  Transaction Tracking: BudgetTracker automatically fetches transactions from linked bank accounts categorizes them and displays them in a clear and organized manner.
-3.  Budgeting: Users can set their budget for a specific period and the app will track their spending and provide alerts when they go over budget.
-4.  Goal Setting: Users can set financial goals such as saving for a specific expense or paying off debt and the app will provide personalized advice and recommendations to help them achieve those goals.
-5.  Expense Categorization: BudgetTracker allows users to create custom categories and subcategories for their expenses making it easier to track and analyze their spending habits.
-6.  Deletion Capabilities: Users can delete categories and transactions ensuring that their financial data remains organized and up-to-date.
-7.  Security: BudgetTracker uses robust security measures including encryption and secure APIs to protect user data and prevent unauthorized access.
-8.  Notifications: The app sends users notifications when they go over budget when they have a low balance or when they have a specific financial goal to achieve.
-9.  Customization: BudgetTracker allows users to customize their experience by setting up custom categories subcategories and budgeting goals.
+1. User Onboarding: Users sign up for the app and are guided through a simple onboarding process where they can link their bank accounts and set up their budgeting goals.
+2. Transaction Tracking: BudgetTracker automatically fetches transactions from linked bank accounts categorizes them and displays them in a clear and organized manner.
+3. Budgeting: Users can set their budget for a specific period and the app will track their spending and provide alerts when they go over budget.
+4. Goal Setting: Users can set financial goals such as saving for a specific expense or paying off debt and the app will provide personalized advice and recommendations to help them achieve those goals.
+5. Expense Categorization: BudgetTracker allows users to create custom categories and subcategories for their expenses making it easier to track and analyze their spending habits.
+6. Deletion Capabilities: Users can delete categories and transactions ensuring that their financial data remains organized and up-to-date.
+7. Security: BudgetTracker uses robust security measures including encryption and secure APIs to protect user data and prevent unauthorized access.
+8. Notifications: The app sends users notifications when they go over budget when they have a low balance or when they have a specific financial goal to achieve.
+9. Customization: BudgetTracker allows users to customize their experience by setting up custom categories subcategories and budgeting goals.
 10. Integration: The app integrates with popular financial services such as bank accounts and investment platforms to provide users with a comprehensive view of their financial lives.
 11. Export-to-CSV library:The app likely utilizes a dedicated library or component for exporting data to CSV format.This library provides a simple and efficient way to generate CSV files from JavaScript data structures.
 
-<br><br>
+`<br><br>`
 **Recharts Features**
-<br>
+`<br>`
 The BudgetTracker app provides users with the ability to view their financial data in monthly and yearly aggregate forms, allowing them to analyze trends and compare spending over time. Here's how it works:
 
 **_Monthly Aggregation:_**
 
 - The app collects and stores financial data, such as income, expenses, and transactions, on a daily basis
-
 - Users can view a monthly summary of their finances by selecting a specific month from a dropdown menu or calendar
 - The monthly view displays aggregated totals for income, expenses, and savings for the selected month
 - Users can also see a breakdown of expenses by category for the month, which helps them identify areas where they are spending more or less compared to previous months

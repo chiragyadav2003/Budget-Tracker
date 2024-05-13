@@ -28,6 +28,7 @@ import { DataTableColumnHeader } from '@/components/dataTable/ColumnHeader';
 import { useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { DataTableFacetedFilter } from '@/components/dataTable/data-table-faceted-filter';
+import { DataTableViewOptions } from '@/components/dataTable/ColumnToggle';
 
 
 
@@ -180,6 +181,9 @@ function TransactionTable({ from, to }: Props) {
                             />
                         )
                     }
+                </div>
+                <div className="flex flex-wrap gap-2">
+                    <DataTableViewOptions table={table} />
                 </div>
             </div>
             <SkeletonWrapper isLoading={history.isFetching}>

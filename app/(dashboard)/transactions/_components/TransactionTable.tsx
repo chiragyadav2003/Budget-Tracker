@@ -7,6 +7,8 @@ import {
     ColumnDef,
     flexRender,
     getCoreRowModel,
+    getSortedRowModel,
+    SortingState,
     useReactTable,
 } from "@tanstack/react-table"
 
@@ -20,6 +22,7 @@ import {
 } from "@/components/ui/table"
 import SkeletonWrapper from '@/components/SkeletonWrapper';
 import { DataTableColumnHeader } from '@/components/dataTable/ColumnHeader';
+import { useState } from 'react';
 
 
 
@@ -52,6 +55,7 @@ export const columns: ColumnDef<TransactionHistoryRow>[] = [
 
 function TransactionTable({ from, to }: Props) {
 
+    const [sorting, setSorting] = useState<SortingState>([])
 
     const history = useQuery<GetTransactionHistoryResponseType>({
         queryKey: ["transactions", "history", to, from],
@@ -63,6 +67,11 @@ function TransactionTable({ from, to }: Props) {
         data: history.data || emptyData,
         columns,
         getCoreRowModel: getCoreRowModel(),
+        state: {
+            sorting
+        },
+        onSortingChange: setSorting,
+        getSortedRowModel: getSortedRowModel(),
     })
 
     return (

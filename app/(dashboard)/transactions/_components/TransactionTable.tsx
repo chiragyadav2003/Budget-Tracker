@@ -31,6 +31,8 @@ import { cn } from '@/lib/utils';
 import { DataTableFacetedFilter } from '@/components/dataTable/data-table-faceted-filter';
 import { DataTableViewOptions } from '@/components/dataTable/ColumnToggle';
 import { Button } from '@/components/ui/button';
+import { mkConfig, generateCsv, download } from "export-to-csv";
+import { DownloadIcon } from 'lucide-react';
 
 
 
@@ -46,7 +48,7 @@ const emptyData: any[] = [];
 type TransactionHistoryRow = GetTransactionHistoryResponseType[0];
 
 //Columns are where you define the core of what your table will look like. They define the data that will be displayed, how it will be formatted, sorted and filtered.
-export const columns: ColumnDef<TransactionHistoryRow>[] = [
+const columns: ColumnDef<TransactionHistoryRow>[] = [
     {
         accessorKey: "category",
         filterFn: (row, id, value) => {
@@ -120,6 +122,14 @@ export const columns: ColumnDef<TransactionHistoryRow>[] = [
     },
 ]
 
+// mkConfig merges your options with the defaults
+// and returns WithDefaults<ConfigOptions>
+const csvConfig = mkConfig({
+    useKeysAsHeaders: true,
+    fieldSeparator: ",",
+    decimalSeparator: "."
+});
+
 function TransactionTable({ from, to }: Props) {
 
     const [sorting, setSorting] = useState<SortingState>([])
@@ -131,6 +141,11 @@ function TransactionTable({ from, to }: Props) {
         queryFn: () => fetch(`/api/transactions-history?from=${DateToUTCDate(from)}&to=${DateToUTCDate(to)}`)
             .then(res => res.json())
     })
+
+    const handleExportCSV = (data: any[]) => {
+        const csv = generateCsv(csvConfig)(data);
+        download(csvConfig)(csv);
+    }
 
     const table = useReactTable({
         data: history.data || emptyData,
@@ -191,6 +206,26 @@ function TransactionTable({ from, to }: Props) {
                     }
                 </div>
                 <div className="flex flex-wrap gap-2">
+                    <Button
+                        className=' ml-auto h-8 lg:flex'
+                        variant={'outline'}
+                        size={"sm"}
+                        onClick={() => {
+                            const data = table.getFilteredRowModel().rows.map(row => ({
+                                category: row.original.category,
+                                categoryIcon: row.original.categoryIcon,
+                                description: row.original.description,
+                                type: row.original.type,
+                                amount: row.original.amount,
+                                formattedAmount: row.original.formattedAmount,
+                                date: row.original.date,
+                            }));
+                            handleExportCSV(data);
+                        }}
+                    >
+                        <DownloadIcon className='mr-2 h-4 w-4' />
+                        Export CSV
+                    </Button>
                     <DataTableViewOptions table={table} />
                 </div>
             </div>

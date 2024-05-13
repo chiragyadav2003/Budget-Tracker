@@ -5,8 +5,11 @@ import { DateToUTCDate } from '@/lib/helpers';
 import { useQuery } from '@tanstack/react-query';
 import {
     ColumnDef,
+    ColumnFilter,
+    ColumnFiltersState,
     flexRender,
     getCoreRowModel,
+    getFilteredRowModel,
     getSortedRowModel,
     SortingState,
     useReactTable,
@@ -43,6 +46,9 @@ type TransactionHistoryRow = GetTransactionHistoryResponseType[0];
 export const columns: ColumnDef<TransactionHistoryRow>[] = [
     {
         accessorKey: "category",
+        filterFn: (row, id, value) => {
+            return value.includes(row.getValue(id))
+        },
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Category" />
         ),
@@ -112,6 +118,8 @@ function TransactionTable({ from, to }: Props) {
 
     const [sorting, setSorting] = useState<SortingState>([])
 
+    const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+
     const history = useQuery<GetTransactionHistoryResponseType>({
         queryKey: ["transactions", "history", to, from],
         queryFn: () => fetch(`/api/transactions-history?from=${DateToUTCDate(from)}&to=${DateToUTCDate(to)}`)
@@ -123,10 +131,13 @@ function TransactionTable({ from, to }: Props) {
         columns,
         getCoreRowModel: getCoreRowModel(),
         state: {
-            sorting
+            sorting,
+            columnFilters
         },
         onSortingChange: setSorting,
+        onColumnFiltersChange: setColumnFilters,
         getSortedRowModel: getSortedRowModel(),
+        getFilteredRowModel: getFilteredRowModel(),
     })
 
     const categoriesOption = useMemo(() => {

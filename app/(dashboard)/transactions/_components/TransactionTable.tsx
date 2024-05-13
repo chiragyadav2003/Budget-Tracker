@@ -50,7 +50,18 @@ export const columns: ColumnDef<TransactionHistoryRow>[] = [
                 <div className=" capitalize">{row.original.category}</div>
             </div>
         )
-    }
+    },
+    {
+        accessorKey: "description",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="Description" />
+        ),
+        cell: ({ row }) => (
+            <div className=" flex gap-2 capitalize">
+                {row.original.description}
+            </div>
+        )
+    },
 ]
 
 function TransactionTable({ from, to }: Props) {

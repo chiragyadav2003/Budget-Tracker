@@ -9,10 +9,16 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  // url      = env("DATABASE_URL")
-  url      = "file:./dev.db" //url for local development
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
+
+// datasource db {
+//   provider = "sqlite"
+// url      = env("DATABASE_URL")
+//   url      = "file:./dev.db" //url for local development
+// }
 
 model UserSettings {
   userId   String @id

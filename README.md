@@ -38,35 +38,35 @@ Technologies used in the project:
 
 <h2>ScreenShots</h2>
 
-      1. Log In / Sign Up
+    1. Log In / Sign Up
 
 ![1715627411631](image/README/1715627411631.png)
 
-      2. Setup currency
+    2. Setup currency
 
 ![1715627581983](image/README/1715627581983.png)
 
-      3. Home Page
+    3. Home Page
 
 ![1715627624809](image/README/1715627624809.png)
 
-      4. create new category
+    4. create new category
 
 ![1715627700700](image/README/1715627700700.png)
 
-      5. create new transaction
+    5. create new transaction
 
 ![1715627715342](image/README/1715627715342.png)
 
-      6. Chart Updation
+    6. Chart Updation
 
 ![1715627743255](image/README/1715627743255.png)
 
-      7. Manage Page
+    7. Manage Page
 
 ![1715627879300](image/README/1715627879300.png)
 
-      8. Transaction Page
+    8. Transaction Page
 
 ![1715627908178](image/README/1715627908178.png)
 
@@ -76,16 +76,13 @@ Technologies used in the project:
 <h3>BudgetTracker : A Comprehensive Budget Management Solution</h3>
 
 **_BudgetTracker is a cutting-edge end-to-end budget management application built using a robust technology stack that combines the power of TypeScript ReactJS NextJS PostgreSQL and a variety of other innovative tools. This comprehensive solution empowers users to effectively manage their financial lives by providing a seamless and intuitive interface for tracking income expenses and investments._**
-`<br>`
 
 **Key Features Category Management:**
-`<br>`
 
 1. Users can create new categories to organize their financial data making it easier to analyze and manage their spending habits.
 2. Transaction Management: BudgetTracker allows users to create new transactions track expenses and monitor income. This feature is designed to provide a clear picture of financial activities enabling informed decision-making.
 3. Deletion Capabilities: The app includes the ability to delete categories and transactions ensuring that users can maintain a clean and organized financial record.
 
-`<br><br>`
 **Technical Stack** - BudgetTracker leverages the following technologies to deliver a robust and scalable solution:
 
 1. TypeScript: Ensuring type safety and robust logic implementation.
@@ -104,9 +101,7 @@ Technologies used in the project:
 14. Zod Validation: Ensuring data integrity and security through validation.
 15. Clerk Auth: Managing user authentication and authorization securely.
 
-`<br><br>`
-
-**How BudgetTracker Works** `<br>`
+**How BudgetTracker Works**
 BudgetTracker is designed to provide users with a comprehensive and user-friendly interface for managing their financial lives. Here's how it works:
 
 1. User Onboarding: Users sign up for the app and are guided through a simple onboarding process where they can link their bank accounts and set up their budgeting goals.
@@ -121,9 +116,8 @@ BudgetTracker is designed to provide users with a comprehensive and user-friendl
 10. Integration: The app integrates with popular financial services such as bank accounts and investment platforms to provide users with a comprehensive view of their financial lives.
 11. Export-to-CSV library:The app likely utilizes a dedicated library or component for exporting data to CSV format.This library provides a simple and efficient way to generate CSV files from JavaScript data structures.
 
-`<br><br>`
 **Recharts Features**
-`<br>`
+
 The BudgetTracker app provides users with the ability to view their financial data in monthly and yearly aggregate forms, allowing them to analyze trends and compare spending over time. Here's how it works:
 
 **_Monthly Aggregation:_**
